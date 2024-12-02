@@ -1,0 +1,14 @@
+<h1>Welcome</h1>
+<ul>
+  <% @products.each do |product| %>
+    <% if product.image.attached? %>
+      <li><%= cl_image_tag product.image.key, height: 200, width: 200, crop: :fill %></li>
+    <% else %>
+      <li>No image available</li>
+    <% end %>
+
+    <li><%= product.nom %></li>
+    <li><%= product.description %></li>
+    <li><%= product.prix %> €</li>
+  <% end %>
+</ul>
